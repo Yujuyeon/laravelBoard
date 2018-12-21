@@ -1,18 +1,31 @@
 @extends('master')
 @section('content')
+<h1>
     퀴즈 내기
-    <form action="/quiz" method="post">
+</h1>
+<hr />
+    <form action="/quizs" method="post">
         <input type="hidden" name="_token" value="{{ csrf_token() }}"> 
-            <label>문제</label>
-            <input type="text" name="quiz">
+            문제&nbsp;&nbsp;
+            <input type="text" name="quiz" style="width:500px; height:50px">
             <br>
-            정답
-            <input type="text" name="answer">
+            정답&nbsp;&nbsp;
+            <input type="text" name="answer"style="width:500px;">
             <br>
-            보기
-            <input type="text" name="example1">
-            <input type="text" name="example2">
-            <input type="text" name="example3">
+            <li>
+
+            보기1
+            <input type="text" name="example1"style="width:500px;">
+            </li>
+            <li>
+            보기2
+            <input type="text" name="example2"style="width:500px;">
+            </li>
+            <li>
+
+            보기3
+            <input type="text" name="example3"style="width:500px;">
+            </li>
             <br>
         <input type="submit">
     </form>

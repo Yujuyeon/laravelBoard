@@ -19,7 +19,12 @@ class quizController extends Controller
         // DB::insert('insert into board (id) values (?)', [$title]);
         
         //쿼리 빌더 방식
-        DB::table('quiz')->insert(['question' => $quiz, 'answer' => $answer, 'examples' => $examples]);
+        DB::table('quiz')->insert
+        (
+            ['question' => $quiz, 
+             'answer' => $answer, 
+             'examples' => $examples]
+        );
         return redirect('/');
 
         //앨로퀀드 방식
@@ -31,16 +36,22 @@ class quizController extends Controller
 
     public function select()
     {
-        $result = DB::table('quiz')->get();
-        $re = "re";
-        $quiz = DB::table('quiz')->pluck('question');
-        $answer = DB::table('quiz')->pluck('answer');
-        $examples = DB::table('quiz')->pluck('examples');
-        foreach ($result as $q) 
-        {
-            echo $q->question;
-            echo $q->answer;
-            echo $q->examples;
-        }
+        // $result = DB::table('quiz')->get();
+        // $quiz = DB::table('quiz')->pluck('question');
+        // $answer = DB::table('quiz')->pluck('answer');
+        // $examples = DB::table('quiz')->pluck('examples');
+        // $chk = 1;
+        // foreach ($result as $q) 
+        // {
+        //     echo $chk;
+        //     // echo '문제'.$chk. $q->question;
+        //     echo $q->question.'|', $q->answer.'|', $q->examples.'|';
+        //     // echo $q->examples;
+        //     // echo $q->examples;
+        //     $chk = $chk+1;
+        // }
+
+        $quizzes = \App\quiz::get();
+        return view('manageQuiz', compact('quizzes'));
     }
 }

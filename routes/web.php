@@ -24,16 +24,17 @@ Route::get('/', function()
     // ]);
     // return view('index');
 
-Route::post('quiz', 'quizController@store');
+Route::post('quizs', 'quizController@store');
 Route::get('submitQuiz', function()
 {
     return view('submitQuiz');
 });
 
-Route::get('manageQuiz', function()
-{
-    return view('manageQuiz');
-});
+Route::get('manageQuiz','quizController@select');
+// Route::get('manageQuiz', function()
+// {
+//     return view('manageQuiz');
+// });
 
 Route::get('vod', function()
 {
@@ -45,9 +46,9 @@ Route::get('vod', function()
 //     return view('watch');
 // });
 // Route::get('manageQuiz', 'quizController@select');
-Route::get('manageQuiz', function()
+Route::get('watchShow', function()
 {
-    return view('manageQuiz');
+    return view('watchShow');
 });
 
 // Route::get('quiz', 'quizController@store');

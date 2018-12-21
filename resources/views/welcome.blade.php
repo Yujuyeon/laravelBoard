@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Live Quiz Show12345
+                    Live Quiz Show
                 </div>
 
                 <div class="links">
